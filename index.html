@@ -1,20 +1,42 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulting Prep & Job Tracker</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/case-library.css">
-    <link rel="stylesheet" href="styles/job-tracker.css">
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/case-library.css">
+    <link rel="stylesheet" href="../styles/job-tracker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- Main Navigation -->
     <nav class="main-nav">
-        <div class="nav-tabs">
-            <button class="tab-btn active" data-tab="case-library">Case Library</button>
-            <button class="tab-btn" data-tab="job-tracker">Application Tracker</button>
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-briefcase"></i>
+                <span>ConsultPrep</span>
+            </div>
+            
+            <div class="nav-tabs">
+                <button class="tab-btn active" data-tab="case-library" onclick="loadCaseLibraryHome()">
+                    <i class="fas fa-book"></i>
+                    Case Library
+                </button>
+                <button class="tab-btn" data-tab="job-tracker" onclick="loadJobTrackerHome()">
+                    <i class="fas fa-clipboard-list"></i>
+                    Application Tracker
+                </button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="help-btn">
+                    <i class="fas fa-question-circle"></i>
+                </button>
+                <button class="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
         </div>
     </nav>
 
@@ -23,8 +45,12 @@
         <!-- Content will be dynamically loaded here -->
     </main>
 
-    <script src="js/navigation.js"></script>
-    <script src="js/case-library.js"></script>
-    <script src="js/job-tracker.js"></script>
+    <script src="../js/case-library.js"></script>
+    <script src="../js/job-tracker.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCaseLibraryHome();
+        });
+    </script>
 </body>
 </html> 
